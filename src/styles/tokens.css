@@ -1,0 +1,19 @@
+:root {
+  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif;
+  color: #eadcc5;
+  background: #0e0c0c;
+  font-synthesis: none;
+  --rouge-faded: #9b5364;
+  --rouge-dark: #552833;
+  --paper: #eadcc5;
+  --paper-muted: #c8b69d;
+  --ink: #171313;
+  --ink-soft: #272020;
+  --gold-dim: #9d8152;
+  --line: rgba(234, 220, 197, 0.26);
+  --shadow-deep: 0 26px 70px rgba(0, 0, 0, 0.58);
+}
+
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; margin: 0; }
+button { font: inherit; }
