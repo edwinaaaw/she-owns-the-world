@@ -1,6 +1,7 @@
 import type { Choice, EndingRelic } from '../story/types'
 import { relicArt } from '../story/relicArt'
 import { Dialog } from './Dialog'
+import { assetUrl } from '../assetUrl'
 
 interface RelicPromptProps {
   ordinaryChoices?: Choice[]
@@ -15,7 +16,7 @@ interface RelicPromptProps {
   onRetrySave?: () => void
 }
 export function RelicPrompt({ kind, relic, source, choice, saved, isFinal, onClose, onRetrySave, ordinaryChoices = [], trial = false }: RelicPromptProps) {
-  const art = relicArt(relic)
+  const art = assetUrl(relicArt(relic))
   const title = kind === 'award' ? '获得人生遗物' : '上一生的记忆，在此刻回应'
   return <Dialog titleId="relic-prompt-title" onClose={onClose}>
     <article className="relic-prompt">

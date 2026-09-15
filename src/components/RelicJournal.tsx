@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl"
 import { EPISODES } from '../story/episodes'
 import { relicArt } from '../story/relicArt'
 import type { RunState } from '../story/runState'
@@ -14,7 +15,7 @@ export function RelicJournal({ run, onClose, onReplay, trial = false }: { run: R
         const used = active ? Boolean(run.usedRelicId) : Boolean(nextCompleted?.usedRelicId)
         const status = active ? used ? '本关已使用，仍在收藏中' : run.state.history.some((id) => id.startsWith('q2-')) ? '本关未使用，机会已过' : '本关可用，尚未使用' : entry.episodeIndex === 5 ? '季终遗物，无下一关用途' : entry.episodeIndex === run.episodeIndex ? '下一段人生可用' : used ? '已使用，现仅收藏' : '未使用，现仅收藏'
         return <article className="relic-card" key={entry.episodeIndex}>
-          {relicArt(entry.relic) && <img className="relic-thumbnail" src={relicArt(entry.relic)} alt={`${entry.relic.name}的遗物图像`} />}
+          {relicArt(entry.relic) && <img className="relic-thumbnail" src={assetUrl(relicArt(entry.relic))} alt={`${entry.relic.name}的遗物图像`} />}
           <span>第 {entry.episodeIndex + 1} 段 · {EPISODES[entry.episodeIndex].title}</span>
           <h3>{entry.relic.name}</h3><p>{entry.relic.description}</p>
           <p className="relic-status">{status}</p>

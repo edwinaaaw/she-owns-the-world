@@ -1,4 +1,5 @@
 import { BrandMark } from './BrandMark'
+import { assetUrl } from '../assetUrl'
 import type { EpisodeDefinition } from '../story/types'
 
 interface FeedCardProps {
@@ -9,7 +10,7 @@ interface FeedCardProps {
 export function FeedCard({ episode, onEnter }: FeedCardProps) {
   return (
     <main className="phone-stage feed-stage">
-      <img className="scene-cover slow-push" src={episode.feedArt} alt={episode.feedAlt} />
+      <img className="scene-cover slow-push" src={assetUrl(episode.feedArt)} alt={episode.feedAlt} />
       <div className="feed-shade" />
       <header className="feed-brand">
         <BrandMark compact />

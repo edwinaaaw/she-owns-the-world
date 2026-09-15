@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl"
 import type { EpisodeNode } from '../story/types'
 
 interface StorySceneProps {
@@ -10,7 +11,7 @@ interface StorySceneProps {
 export function StoryScene({ node, episodeNumber, episodeTitle, onAdvance }: StorySceneProps) {
   return (
     <main className="phone-stage story-stage">
-      <img className="scene-cover" src={node.art} alt={`${node.speaker}的故事开场`} />
+      <img className="scene-cover" src={assetUrl(node.art)} alt={`${node.speaker}的故事开场`} />
       <div className="story-vignette" />
 
       <header className="scene-header">

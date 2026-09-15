@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl"
 import type { Effect, EpisodeNode } from '../story/types'
 
 interface ConsequenceProps {
@@ -10,7 +11,7 @@ interface ConsequenceProps {
 export function Consequence({ node, effects, onContinue, onRestart }: ConsequenceProps) {
   return (
     <main className="phone-stage consequence-stage">
-      <img className="scene-cover" src={node.art} alt={`${node.speaker}注视着你的决定`} />
+      <img className="scene-cover" src={assetUrl(node.art)} alt={`${node.speaker}注视着你的决定`} />
       <div className="consequence-shade" />
       <header className="result-header">
         <span>选择已经发生</span>

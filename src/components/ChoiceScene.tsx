@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl"
 import { useEffect, useRef } from 'react'
 import { relicArt } from '../story/relicArt'
 import type { Choice, EndingRelic, EpisodeNode } from '../story/types'
@@ -22,7 +23,7 @@ export function ChoiceScene({ node, choices = node.choices ?? [], relicName, rel
 
   return (
     <main className="phone-stage choice-stage">
-      <img className="scene-cover" src={node.art} alt={`${protagonist}所在的场景`} />
+      <img className="scene-cover" src={assetUrl(node.art)} alt={`${protagonist}所在的场景`} />
       <div className="choice-shade" />
 
       <header className="choice-header">
@@ -40,7 +41,7 @@ export function ChoiceScene({ node, choices = node.choices ?? [], relicName, rel
             <span className="choice-number">{String(index + 1).padStart(2, '0')}</span>
             <span className="choice-copy">
               <strong>{choice.label}</strong>
-              {choice.relicId && <span className="relic-choice-heading">{relic && relicArt(relic) && <img src={relicArt(relic)} alt="" />}<small className="relic-choice-label">使用上一生遗物 · {relic?.name ?? relicName}</small></span>}
+              {choice.relicId && <span className="relic-choice-heading">{relic && relicArt(relic) && <img src={assetUrl(relicArt(relic))} alt="" />}<small className="relic-choice-label">使用上一生遗物 · {relic?.name ?? relicName}</small></span>}
               <small>{choice.riskHint}</small>
             </span>
             <span aria-hidden="true">↗</span>

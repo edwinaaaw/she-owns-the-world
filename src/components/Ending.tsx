@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl"
 import type { EpisodeNode } from '../story/types'
 import { relicArt } from '../story/relicArt'
 
@@ -14,7 +15,7 @@ interface EndingProps {
 export function Ending({ node, saved, isFinalEpisode, onContinue, onRestart, needsAward = false, trial = false }: EndingProps) {
   return (
     <main className="phone-stage ending-stage">
-      <img className="scene-cover" src={node.art} alt="本段人生的结局" />
+      <img className="scene-cover" src={assetUrl(node.art)} alt="本段人生的结局" />
       <div className="ending-shade" />
       <header className="result-header">
         <span>{node.speaker}</span>
@@ -27,7 +28,7 @@ export function Ending({ node, saved, isFinalEpisode, onContinue, onRestart, nee
         {node.unresolvedEcho && <p className="unresolved-echo">{node.unresolvedEcho}</p>}
         {node.relic && !needsAward && (
           <article className="relic-card" aria-label="本段人生遗物">
-            {relicArt(node.relic) && <img className="relic-thumbnail" src={relicArt(node.relic)} alt={`${node.relic.name}的遗物图像`} />}
+            {relicArt(node.relic) && <img className="relic-thumbnail" src={assetUrl(relicArt(node.relic))} alt={`${node.relic.name}的遗物图像`} />}
             <span>已获得</span>
             <h2>{node.relic.name}</h2>
             <p>{node.relic.description}</p>
