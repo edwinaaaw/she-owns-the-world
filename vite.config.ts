@@ -2,7 +2,7 @@ import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ mode }) => ({
-  base: mode === 'github-pages' ? '/sheownstheworld/' : '/',
+  base: mode === 'github-pages' ? '/she-owns-the-world/' : '/',
   plugins: [react()],
   build: {
     // Sites serves static files from dist/client and the Worker from dist/server.
